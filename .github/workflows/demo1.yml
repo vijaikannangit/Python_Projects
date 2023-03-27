@@ -1,7 +1,8 @@
 name: GitHub Actions Exploring Demo1
 run-name: '${{ github.actor }} is exploring GitHub Actions'
 'on':
-  - push
+#   - push
+  - workflow_dispatch
 jobs:
   Explore-GitHub-Actions-job1:
     runs-on: ubuntu-latest
