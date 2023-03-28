@@ -21,10 +21,11 @@ jobs:
            
 #      - run: python my_script.py
 
-#       - name: Python Pylint Github Actions for Code Analysis
-#         run: |
-#           python -m pip install --upgrade pip
-#           pip install pylint
+      - name: Python Pylint Github Actions for Code Analysis
+        run: |
+            python -m pip install --upgrade pip
+            pip install pylint
+            
 #       - name: Analysing the code with pylint
 #         run: |
 #           find . -name 'inventory_demoapp.py' -exec pylint {} \;
