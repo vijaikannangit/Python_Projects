@@ -29,9 +29,5 @@ jobs:
       - name: Analysing the code with pylint
         run: |
            find . -name 'inventory_demoapp.py' -exec pylint {} \;
-           
-      - name: Run Unit-Test (pytest)
-        run: |
-           python -m pip install 
-           
+                   
       - run: 'echo "This job status is ${{ job.status }}."'
