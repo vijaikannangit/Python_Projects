@@ -1,6 +1,8 @@
 name: learn-github-actions-nodejs
 run-name: ${{ github.actor }} is learning GitHub Actions NPM
-on: [push]
+'on':
+#   - push
+  - workflow_dispatch
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
