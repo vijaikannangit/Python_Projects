@@ -30,6 +30,8 @@ jobs:
         run: |
            #find . -name'inventory_demoapp.p' -exec pylint {} \;
            #find . -name '*.py' -exec pylint {} \;
-           pylint src/inventory_demoapp.py
+           #pylint src/inventory_demoapp.py
+           #pylint . --reports=y --score n
+           pylint --version
                    
       - run: 'echo "This job status is ${{ job.status }}."'
