@@ -28,6 +28,7 @@ jobs:
             
       - name: Analysing the code with pylint
         run: |
-           find . -name 'inventory_demoapp.py' -exec pylint {} \;
+           #find . -name 'inventory_demoapp.py' -exec pylint {} \;
+           find . -name '*.py' -exec pylint {} \;
                    
       - run: 'echo "This job status is ${{ job.status }}."'
