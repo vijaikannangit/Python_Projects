@@ -21,11 +21,11 @@ jobs:
 
       - name: Step3 Parameter 
         id: Output-text
-        run: echo '::SET-OUTPUT NAME=OUT_PARAM::Output after Addition:'
+        run: echo '::SET-OUTPUT NAME=OUT_PARAM::Output after Addition'
 
       - name: Step4 Get Output
         run: |
            echo "Value of Parameter1 : ${{steps.param-1.outputs.number1}}"
            echo "Value of Parameter2 : ${{steps.param-2.outputs.number2}}"
            echo "${{steps.Output-text.outputs.OUT_PARAM}}"
-           echo expr ${{steps.param-2.outputs.number2}} - ${{steps.param-2.outputs.number1}}
+           echo (expr ${{steps.param-2.outputs.number2}} + ${{steps.param-2.outputs.number1}})
