@@ -1,18 +1,26 @@
 # Github Workflow passing parameter between steps
 name: Pass Parameters between Steps
-'on':
-  - workflow_dispatch
+on:
+  workflow_dispatch
+env:
+  WORK_FLOW_LEVEL: Vijai Kannan
+
 jobs:
   Parameter-between-Steps-job:
+
     runs-on: ubuntu-latest
+    env:
+      JOB_LEVEL: testing
 
     steps:
-    
+
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Step1 Parameter 
         id: param-1
+        env:
+          STEP_LEVEL: scope of env variables
         run: echo "number1=1" >> $GITHUB_OUTPUT
 
       - name: Step2 Parameter 
@@ -23,9 +31,10 @@ jobs:
         id: Output-text
         run: echo '::SET-OUTPUT NAME=OUT_PARAM::Output after Addition'
 
-      - name: Step4 Get Output
+      - name: Step4 Get Output between Steps and env variables according to the scope
         run: |
-           echo "Value of Parameter1 : ${{steps.param-1.outputs.number1}}"
-           echo "Value of Parameter2 : ${{steps.param-2.outputs.number2}}"
-           echo "${{steps.Output-text.outputs.OUT_PARAM}}"
-           echo (expr ${{steps.param-2.outputs.number2}} + ${{steps.param-2.outputs.number1}})
+           echo "Value of Parameter1 from Step1 : ${{steps.param-1.outputs.number1}}"
+           echo "Value of Parameter2 from Step2 : ${{steps.param-2.outputs.number2}}"
+           echo "Value of Parameter3 from Step3 : ${{steps.Output-text.outputs.OUT_PARAM}}"
+           echo "$JOB_LEVEL $JOB_LEVEL $STEP_LEVEL"
+           #echo (expr ${{steps.param-2.outputs.number2}} + ${{steps.param-2.outputs.number1}})
