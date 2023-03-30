@@ -1,0 +1,30 @@
+# Github Workflow passing parameter between steps
+name: Pass Parameters between Steps
+on: workflow_dispatch
+jobs:
+  Parameter-between-Steps-job
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Step1 Parameter 
+        id: param-1
+        run: echo "number1=1" >> $GITHUB_OUTPUT
+
+      - name: Step2 Parameter 
+        id: param-2
+        run: echo "number2=4" >> $GITHUB_OUTPUT
+
+      - name: Step3 Parameter 
+        id: Output-text
+        run: echo '::SET-OUTPUT NAME=OUT_PARAM::Output :'
+
+      - name: Step4 Get Output
+        run: |
+           echo "Value of Parameter1 : ${{steps.param-1.outputs.number1}}"
+           echo "Value of Parameter1 : ${{steps.param-2.outputs.number2}}"
+           echo "Result after addition : ${{steps.Output-text.outputs.OUT_PARAM}}"
