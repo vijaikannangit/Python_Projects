@@ -3,7 +3,6 @@ name: Pass Parameters between Steps
 on: workflow_dispatch
 jobs:
   Parameter-between-Steps-job
-
     runs-on: ubuntu-latest
 
     steps:
