@@ -5,13 +5,13 @@ name: Pass Parameters between Steps
     inputs: 
       username: 
          description: 'Login Username'
-         default: '********'
+         default: '*********'
          type: 'string'
          required: true
     inputs: 
       password: 
          description: 'Login Password'
-         default: '********'
+         default: '*********'
          type: 'string'
          required: true
 
@@ -56,8 +56,3 @@ jobs:
         run: |
            echo "Username : ${{inputs.username}}"
            echo "Password : ${{inputs.password}}"
-
-           
-
-
-        
