@@ -1,7 +1,7 @@
 # Github Workflow passing parameter between steps
 name: Pass Parameters between Steps
-on:
-  workflow_dispatch:
+'on':
+  - workflow_dispatch
     inputs: 
       username: 
          description: 'Login Username'
