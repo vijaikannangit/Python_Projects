@@ -36,5 +36,5 @@ jobs:
            echo "Value of Parameter1 from Step1 : ${{steps.param-1.outputs.number1}}"
            echo "Value of Parameter2 from Step2 : ${{steps.param-2.outputs.number2}}"
            echo "Value of Parameter3 from Step3 : ${{steps.Output-text.outputs.OUT_PARAM}}"
-           echo "$JOB_LEVEL $JOB_LEVEL $STEP_LEVEL"
+           echo "Environment Variable according to scope : $WORK_FLOW_LEVEL $JOB_LEVEL $STEP_LEVEL"
            #echo (expr ${{steps.param-2.outputs.number2}} + ${{steps.param-2.outputs.number1}})
