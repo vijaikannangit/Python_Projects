@@ -33,8 +33,8 @@ jobs:
 
       - name: Step4 Get Output between Steps and env variables according to the scope
         run: |
-           echo "Value of Parameter1 from Step1 : ${{steps.param-1.outputs.number1}}"
-           echo "Value of Parameter2 from Step2 : ${{steps.param-2.outputs.number2}}"
-           echo "Value of Parameter3 from Step3 : ${{steps.Output-text.outputs.OUT_PARAM}}"
+           echo "Value of Parameter1 from Step1 to display in Step4 : ${{steps.param-1.outputs.number1}}"
+           echo "Value of Parameter2 from Step2 to display in Step4 : ${{steps.param-2.outputs.number2}}"
+           echo "Value of Parameter3 from Step3 to display in Step4: ${{steps.Output-text.outputs.OUT_PARAM}}"
            echo "Environment Variable according to scope : $WORK_FLOW_LEVEL $JOB_LEVEL $STEP_LEVEL"
            #echo (expr ${{steps.param-2.outputs.number2}} + ${{steps.param-2.outputs.number1}})
