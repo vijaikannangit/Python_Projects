@@ -1,19 +1,18 @@
 # Github Workflow passing parameter between steps
 name: Pass Parameters between Steps
-'on':
-  - workflow_dispatch:
-      inputs: 
-        username: 
-          description: 'Login Username'
-          default: '*********'
-          type: 'string'
-          required: true
-
-        password: 
-          description: 'Login Password'
-          default: '*********'
-          type: 'string'
-          required: true
+on:
+  workflow_dispatch:
+    inputs: 
+      username: 
+        description: 'Login Username'
+        default: '*********'
+        type: 'string'
+        required: true
+      password: 
+        description: 'Login Password'
+        default: '*********'
+        type: 'string'
+        required: true
 
 env:
   WORK_FLOW_LEVEL: Vijai Kannan
