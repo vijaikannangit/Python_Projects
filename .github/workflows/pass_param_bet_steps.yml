@@ -50,8 +50,11 @@ jobs:
            echo "Value of Parameter3 from Step3 to display in Step4: ${{steps.Output-text.outputs.OUT_PARAM}}"
            echo "Environment Variable according to scope : $WORK_FLOW_LEVEL $JOB_LEVEL $STEP_LEVEL"
            #echo (expr ${{steps.param-2.outputs.number2}} + ${{steps.param-2.outputs.number1}})
+           #sh ./github-actions-script.sh 
+           #echo "Adding two Variables"
+           #expr ${{steps.param-2.outputs.number2}} + ${{steps.param-2.outputs.number1}
 
-      - name: Step4 print provided username and password parameter for actions
+      - name: Step5 print provided username and password parameter for actions
         run: |
            echo "Username : ${{inputs.username}}"
            echo "Password : ${{inputs.password}}"
